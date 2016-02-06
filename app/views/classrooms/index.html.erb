@@ -5,9 +5,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:student_id) %></th>
-      <th><%= model_class.human_attribute_name(:course_id) %></th>
+      <th><%= model_class.human_attribute_name(:student) %></th>
+      <th><%= model_class.human_attribute_name(:course) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -15,11 +14,12 @@
   <tbody>
     <% @classrooms.each do |classroom| %>
       <tr>
-        <td><%= link_to classroom.id, classroom_path(classroom) %></td>
-        <td><%= classroom.student_id %></td>
-        <td><%= classroom.course_id %></td>
+        <td><%= classroom.student_name %></td>
+        <td><%= classroom.course_name %></td>
         <td><%=l classroom.created_at %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      classroom_path(classroom), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_classroom_path(classroom), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

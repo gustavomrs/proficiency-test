@@ -4,21 +4,21 @@
 			<div class="form-group">
 
 				<label for="name">
-					Name
+					<%= Student.human_attribute_name(:name) %>
 				</label>
 				<%= s.text_field :name, class: "form-control" %>
 			</div>
 			<div class="form-group">
 
 				<label for="registerNumber">
-					Register Number
+					<%= Student.human_attribute_name(:register_number) %>
 				</label>
 				<%= s.text_field :register_number, class: "form-control" %>
 			</div>
 			<div class="form-group">
 
 				<label for="registerNumber">
-				<%= t('.status') %>
+				<%= Student.human_attribute_name(:status) %>
 				</label>
 				<%= s.text_field :status, class: "form-control" %>
 			</div>

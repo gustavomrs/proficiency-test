@@ -3,13 +3,13 @@
 		<%= form_for @classroom do |c| %>
 			<div class="form-group">
 				<label for="name">
-					Student
+					<%= Classroom.human_attribute_name(:estudante) %>
 				</label>
 				<%= collection_select(:classroom, :student_id, Student.all, :id, :name,  { prompt: true }, { :class => 'form-control' } ) %>
 			</div>
 			<div class="form-group">
-				<label for="name">
-					Course
+				<label for="course">
+					<%= Classroom.human_attribute_name(:course) %>
 				</label>
 				<%= collection_select(:classroom, :course_id, Course.all, :id, :name, { prompt: true }, { :class => "form-control" } ) %>
 			</div>

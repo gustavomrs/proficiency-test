@@ -1,12 +1,22 @@
 pt-BR:
-  title: Título
-  student: Estudante
-  students: Estudantes
   activerecord:
+    models:
+      student: Estudante
+      course: Curso
+      classroom: Matrícula
     attributes:
       student:
-        label:
-          name: 'Nome'
+        name: Nome
+        register_number: Registro
+        status: Status
+      course:
+        name: Nome
+        description: Descrição
+        status: Status
+      classroom:
+        student: Estudante
+        course: Curso
+        created_at: Matriculado em
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -148,12 +158,22 @@ pt-BR:
         one: 'Não foi possível gravar %{model}: 1 erro'
         other: 'Não foi possível gravar %{model}: %{count} erros'
   helpers:
+    titles:
+      new_male: 'Novo %{model}'
+      new_female: 'Nova %{model}'
+    actions: Ações
     select:
       prompt: Por favor selecione
     submit:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+    links:
+      show: Visualizar
+      edit: Editar
+      destroy: Remover
+      new: Cadastrar
+      confirm: Tem certeza?
   number:
     currency:
       format:

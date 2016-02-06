@@ -21,13 +21,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li>
-                  <a href="<%= students_path %>">Alunos</a>
+                  <a href="<%= students_path %>"><%= Student.model_name.human.pluralize.titleize %></a>
                 </li>
                 <li>
-                  <a href="<%= courses_path %>">Cursos</a>
+                  <a href="<%= courses_path %>"><%= Course.model_name.human.pluralize.titleize %></a>
                 </li>
                 <li>
-                  <a href="<%= classrooms_path %>">Matrículas</a>
+                  <a href="<%= classrooms_path %>"><%= Classroom.model_name.human.pluralize.titleize %></a>
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
