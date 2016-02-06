@@ -35,6 +35,8 @@ gem 'pg', '~> 0.17.1'
 
 gem "foreigner", '~> 1.7.4'
 
+gem 'puma'
+
 group :doc do
   gem 'sdoc', require: false
 end

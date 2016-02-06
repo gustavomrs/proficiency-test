@@ -153,6 +153,7 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.4)
       pry (>= 0.9.10)
+    puma (2.16.0)
     rack (1.5.5)
     rack-contrib (1.4.0)
       git-version-bump (~> 0.15)
@@ -302,6 +303,7 @@ DEPENDENCIES
   meta_request
   pg (~> 0.17.1)
   pry-rails
+  puma
   rails (= 4.1.4)
   rails-assets-angular (= 1.2.14)
   rails-assets-angular-animate (= 1.2.14)
