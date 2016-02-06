@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-4">
+		<%= form_for @classroom do |c| %>
+			<div class="form-group">
+				<label for="name">
+					Student
+				</label>
+				<%= collection_select(:classroom, :student_id, Student.all, :id, :name,  { prompt: true }, { :class => 'form-control' } ) %>
+			</div>
+			<div class="form-group">
+				<label for="name">
+					Course
+				</label>
+				<%= collection_select(:classroom, :course_id, Course.all, :id, :name, { prompt: true }, { :class => "form-control" } ) %>
+			</div>
+			<%= c.submit %>
+		<% end %>
+	</div>
+	<div class="col-md-4">
+	</div>
+	<div class="col-md-4">
+	</div>
+</div>

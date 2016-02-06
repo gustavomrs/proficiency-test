@@ -33,6 +33,8 @@ gem 'haml', '~> 4.0.4'
 gem 'enumerate_it', '~> 1.2.0'
 gem 'pg', '~> 0.17.1'
 
+gem "foreigner", '~> 1.7.4'
+
 group :doc do
   gem 'sdoc', require: false
 end

@@ -33,7 +33,8 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
-  config.action_view.raise_on_missing_translations = true
+  # config.action_view.raise_on_missing_translations = true
+  config.action_view.raise_on_missing_translations = false
 
   # Generators
   config.generators do |g|
@@ -43,7 +44,7 @@ Rails.application.configure do
     g.test_framework :rspec, :view_specs => false, :request_specs => false, :routing_specs => false
 
     # Set scaffold controller
-    g.scaffold_controller = :my_controller
+    # g.scaffold_controller = :my_controller
 
     # Disabling some generators
     g.helper      = false
