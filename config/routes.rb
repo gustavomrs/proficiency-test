@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :classrooms
+  resources :classrooms, path: 'matriculas'
 
-  resources :courses
+  resources :courses, path: 'cursos'
 
-  resources :students
+  resources :students, path: 'estudantes'
 
   root 'home#index'
 end

@@ -6,11 +6,12 @@ source 'https://rails-assets.org'
 
 gem 'rails', '4.1.4'
 
-# gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'twitter-bootstrap-rails', '3.2.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'maskedinput-rails', '1.4.0.0'
+gem 'client_side_validations'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -28,7 +29,6 @@ gem 'rails-assets-restangular', '~> 1.3.1'
 gem 'rails-assets-lodash', '~> 2.4.1'
 
 gem 'simple_form', '~> 3.0.2'
-gem 'haml', '~> 4.0.4'
 
 gem 'enumerate_it', '~> 1.2.0'
 gem 'pg', '~> 0.17.1'
@@ -53,7 +53,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.1'
+  gem 'rspec-rails', '~> 3.1'
   gem 'shoulda-matchers', '~> 2.6.1'
 
   gem 'rails-assets-angular-mocks', '1.2.14'
@@ -61,10 +61,11 @@ group :development, :test do
 
   gem 'awesome_print'
   gem 'pry-rails'
+  gem 'byebug'
 end
 
 group :test do
-  gem 'capybara', '~> 2.3.0'
+  # gem 'capybara', '~> 2.3.0'
   gem 'launchy', '~> 2.4.2'
   gem 'database_cleaner', '~> 1.3.0'
   gem 'factory_girl_rails', '~> 4.4.1'

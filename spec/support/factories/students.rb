@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :student do
-    name "MyString"
-    register_number "MyString"
-    status 1
+    sequence(:name) { |n| "Name #{n}" }
+    sequence(:register_number) { |n| "Register #{n}" }
+    sequence(:status) { |n| n }
   end
 end

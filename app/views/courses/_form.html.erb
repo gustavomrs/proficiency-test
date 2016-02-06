@@ -1,26 +1,26 @@
 <div class="row">
 	<div class="col-md-4">
-		<%= form_for @course do |c| %>
+		<%= form_for @course, validate: true do |c| %>
 			<div class="form-group">
 
 				<label for="name">
 					<%= Course.human_attribute_name(:name) %>
 				</label>
-				<%= c.text_field :name, class: "form-control" %>
+				<%= c.text_field :name, { placeholder: I18n.t('helpers.masks.course_name'), class: "form-control" } %>
 			</div>
 			<div class="form-group">
 
-				<label for="registerNumber">
+				<label for="description">
 					<%= Course.human_attribute_name(:description) %>
 				</label>
-				<%= c.text_area :description, class: "form-control" %>
+				<%= c.text_area :description, { placeholder: I18n.t('helpers.masks.description'), class: "form-control" } %>
 			</div>
 			<div class="form-group">
 
-				<label for="registerNumber">
+				<label for="status">
 				<%= Course.human_attribute_name(:status) %>
 				</label>
-				<%= c.text_field :status, class: "form-control" %>
+				<%= c.text_field :status, { placeholder: I18n.t('helpers.masks.status'), class: "form-control" } %>
 			</div>
 			<%= c.submit %>
 		<% end %>

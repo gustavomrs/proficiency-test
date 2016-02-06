@@ -1,3 +1,5 @@
 class Course < ActiveRecord::Base
-  has_and_belongs_to_many :students
+  has_many :students, through: :classrooms
+
+  validates :name, :description, :status, presence: true
 end

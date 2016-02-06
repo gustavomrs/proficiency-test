@@ -28,9 +28,10 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to @student, notice: I18n.t('helpers.messages.successfully_created') }
         format.json { render action: 'show', status: :created, location: @student }
       else
+        flash[:error] = I18n.t('errors.messages.errors_found')
         format.html { render action: 'new' }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end
@@ -42,9 +43,10 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        format.html { redirect_to @student, notice: I18n.t('helpers.messages.successfully_updated') }
         format.json { head :no_content }
       else
+        flash[:error] = I18n.t('errors.messages.errors_found')
         format.html { render action: 'edit' }
         format.json { render json: @student.errors, status: :unprocessable_entity }
       end

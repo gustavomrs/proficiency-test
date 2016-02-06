@@ -1,4 +1,6 @@
 pt-BR:
+  messages:
+
   activerecord:
     models:
       student: Estudante
@@ -122,6 +124,7 @@ pt-BR:
   errors:
     format: "%{attribute} %{message}"
     messages:
+      errors_found: 'Ops! Alguns errors foram encontrados, verifique o formulário!'
       accepted: deve ser aceito
       blank: não pode ficar em branco
       present: deve ficar em branco
@@ -141,7 +144,7 @@ pt-BR:
       not_an_integer: não é um número inteiro
       odd: deve ser ímpar
       required: deve existir
-      taken: já está em uso
+      taken: já está cadastrado neste curso!
       too_long:
         one: 'é muito longo (máximo: 1 caracter)'
         other: 'é muito longo (máximo: %{count} caracteres)'
@@ -158,9 +161,21 @@ pt-BR:
         one: 'Não foi possível gravar %{model}: 1 erro'
         other: 'Não foi possível gravar %{model}: %{count} erros'
   helpers:
+    messages:
+      successfully_created: 'Cadastro realizado com sucesso!'
+      successfully_updated: 'Atualizado com sucesso!'
+    masks:
+      course_name: 'Ex: Contabilidade'
+      description: 'Ex: Esse curso é essencial pra quem busca...'
+      student_name: 'Ex: Gustavo Rocha'
+      status: 'Ex: 1'
+      register: 'Ex: 1596-6'
     titles:
+      hello: Olá
+      welcome_message: Seja bem-vindo(a) à aplicação desenvolvida para o teste de proficiência! Espero que você goste ;)
       new_male: 'Novo %{model}'
       new_female: 'Nova %{model}'
+      edit: 'Editar %{model}'
     actions: Ações
     select:
       prompt: Por favor selecione
@@ -169,11 +184,14 @@ pt-BR:
       submit: Salvar %{model}
       update: Atualizar %{model}
     links:
+      index: Início
+      back: Voltar
       show: Visualizar
       edit: Editar
       destroy: Remover
       new: Cadastrar
       confirm: Tem certeza?
+      edit: Editar
   number:
     currency:
       format:

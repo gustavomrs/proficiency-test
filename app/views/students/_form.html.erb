@@ -4,28 +4,26 @@
 			<div class="form-group">
 
 				<label for="name">
-					<%= Student.human_attribute_name(:name) %>
+					<%= Student.human_attribute_name(:name) %> *
 				</label>
-				<%= s.text_field :name, class: "form-control" %>
+				<%= s.text_field :name, { placeholder: I18n.t('helpers.masks.student_name'), class: "form-control" } %>
 			</div>
 			<div class="form-group">
 
 				<label for="registerNumber">
-					<%= Student.human_attribute_name(:register_number) %>
+					<%= Student.human_attribute_name(:register_number) %> *
 				</label>
-				<%= s.text_field :register_number, class: "form-control" %>
+				<%= s.text_field :register_number, { placeholder: I18n.t('helpers.masks.register'), class: "form-control" } %>
 			</div>
 			<div class="form-group">
 
-				<label for="registerNumber">
-				<%= Student.human_attribute_name(:status) %>
+				<label for="status">
+				<%= Student.human_attribute_name(:status) %> *
 				</label>
-				<%= s.text_field :status, class: "form-control" %>
+				<%= s.text_field :status, { placeholder: I18n.t('helpers.masks.status'), class: "form-control" } %>
 			</div>
 			<%= s.submit %>
 		<% end %>
-	</div>
-	<div class="col-md-4">
 	</div>
 	<div class="col-md-4">
 	</div>

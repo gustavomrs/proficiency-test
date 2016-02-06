@@ -6,7 +6,7 @@ class CreateClassrooms < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_foreign_key :classrooms, :students
-    add_foreign_key :classrooms, :courses
+    add_foreign_key :classrooms, :students, column: :student_id
+    add_foreign_key :classrooms, :courses, column: :course_id
   end
 end

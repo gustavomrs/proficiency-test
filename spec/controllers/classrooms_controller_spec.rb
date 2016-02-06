@@ -19,17 +19,21 @@ require 'rails_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe ClassroomsController, :type => :controller do
+  let(:course)  { create(:course) }
+  let(:student) { create(:student) }
+  let(:valid_attributes) do
+    {
+      course_id: course.id,
+      student_id: student.id
+    }
+  end
 
-  # This should return the minimal set of attributes required to create a valid
-  # Classroom. As you add validations to Classroom, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
-
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    {
+      course_id: nil,
+      student_id: student.id
+    }
+  end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -102,15 +106,21 @@ RSpec.describe ClassroomsController, :type => :controller do
 
   describe "PUT update" do
     describe "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+      let(:new_course) { create(:course) }
+      let(:new_student) { create(:student) }
+      let(:new_attributes) do
+        {
+          course_id: new_course.id,
+          student_id: new_student.id
+        }
+      end
 
       it "updates the requested classroom" do
         classroom = Classroom.create! valid_attributes
         put :update, {:id => classroom.to_param, :classroom => new_attributes}, valid_session
         classroom.reload
-        skip("Add assertions for updated state")
+        expect(classroom.student_id).to eq(new_student.id)
+        expect(classroom.course_id).to eq(new_course.id)
       end
 
       it "assigns the requested classroom as @classroom" do
